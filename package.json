@@ -1,0 +1,35 @@
+{
+    "name": "accol-syntax",
+    "displayName": "ACCOL Syntax",
+    "description": "ACCOL Syntax support for VS Code",
+    "version": "0.0.1",
+    "preview": true,
+    "publisher": "swang",
+    "homepage": "https://github.com/stevepwang/accol-syntax",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/stevepwang/accol-syntax.git"
+    },
+    "bugs": {
+        "url": "https://github.com/stevepwang/accol-syntax/issues"
+    },
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "accol",
+            "aliases": ["ACCOL", "accol"],
+            "extensions": [".acc",".ACC"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "accol",
+            "scopeName": "source.accol",
+            "path": "./syntaxes/accol.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,108 @@
+{
+  "fileTypes": [
+    "acc"
+  ],
+  "name": "ACCOL",
+  "patterns": [
+  {
+    "name": "meta.block.accol",
+    "begin": "^\\*" ,
+    "beginCaptures": {
+          "0": { "name": "punctuation.definition.entity.accol" }
+    },
+    "patterns": [
+      {
+        "name": "meta.definition.variable.accol",
+        "begin": "SIGNALS",
+        "beginCaptures": {
+          "0": { "name": "entity.name.section.accol" }
+        },
+        "patterns":[
+          { "include": "#variable_def" }
+        ],
+        "end": "^(?=\\*)"
+      },
+      {
+        "name": "meta.definition.task.accol",
+        "begin": "TASK\\s+\\d+$",
+        "beginCaptures": {
+          "0": { "name": "entity.name.section.accol" }
+        },
+        "patterns": [
+          { "include": "#comments" },
+          { "include": "#variables" },
+          { "include": "#keywords" },
+          { "include": "#operators" },
+          { "include": "#constants" }
+        ],
+        "end": "^(?=\\*)"
+      }
+    ],
+    "end": "^(?=\\*)"
+  }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "match": "^\\s*\\d+ \\* (C)(\\n|\\s)(.+)?$",
+          "captures": {
+            "1": { "name": "punctuation.definition.comment.accol" },
+            "2": { "name": "punctuation.whitespace.comment.leading.accol" },
+            "3": { "name": "comment.line.accol" }
+          }
+        }]
+    },
+    "variable_def": {
+      "patterns": [{
+        "begin": "^(\\s+)(?=\\S+\\s+[LAS]A?)",
+        "patterns": [
+          { "include": "#variables" },
+          { "name": "storage.type.accol", "match": "\\b[LAS]A?\\b" },
+          { "name": "storage.modifier.accol", "match": "\\b([RW]\\d|[AMC][IE]|\\S+(?=:)|C)\\b" },
+          { "include": "#constants" }
+        ],
+        "end": "^(?=\\1\\S|^\\*)"
+      }]
+    },
+    "variables": {
+      "patterns": [{
+        "name": "support.variable.accol",
+        "match": "(#)[A-Z][A-Z0-9_-]{,7}(\\.)[A-Z0-9_-]{,8}(\\.)[A-Z0-9_-]{,8}",
+        "captures": {
+          "1": { "name": "punctuation.definition.attribute.accol"},
+          "2": { "name": "punctuation.separator.namespace.accol"},
+          "3": { "name": "punctuation.separator.namespace.accol"}
+        }
+      },
+      {
+        "name": "variable.accol",
+        "match": "[A-Z][A-Z0-9_-]{,7}(\\.)[A-Z0-9_-]{,8}((\\.)[A-Z0-9_-]{,8})?",
+        "captures": {
+          "1": { "name": "punctuation.separator.namespace.accol"},
+          "3": { "name": "punctuation.separator.namespace.accol"}
+        }
+      }]
+    },
+    "keywords": {
+      "patterns": [{
+        "name": "keyword.control.accol",
+        "match": "(\\b|:)(IF|ENDIF|ELSE|FOR|ENDFOR)\\b"
+      }]
+    },
+    "operators": {
+      "patterns": [{
+        "name": "keyword.operator.accol",
+        "match": "\\+|-|\\*|/|(&lt;|&gt;|!|=)=?|&|\\||\\^|~"
+      }]
+    },
+    "constants": {
+      "patterns": [
+        { "name": "constant.numeric.real.accol", "match": "\\b-?\\d{1,4}\\.\\d*" },
+        { "name": "constant.numeric.integer.accol", "match": "\\b\\d+\\b" },
+        { "name": "string.quoted.double.accol", "begin": "'", "end": "'" },
+        { "name": "strings.unquoted.accol", "match": "\\b\\w+\\b" }
+      ] }
+  },
+  "scopeName": "source.accol"
+}
