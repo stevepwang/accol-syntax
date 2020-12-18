@@ -12,6 +12,6 @@ WIP
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.x
 
-Initial release
+Preview release

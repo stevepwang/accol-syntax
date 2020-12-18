@@ -1,9 +1,9 @@
 # Change Log
 
-All notable changes to the "accol-syntax" extension will be documented in this file.
+## 0.0.1
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Initial release of accol-syntax
 
-## [Unreleased]
+## 0.0.2
 
-- Initial release
+- Documentation fixes
