@@ -2,7 +2,7 @@
     "name": "accol-syntax",
     "displayName": "ACCOL Syntax",
     "description": "ACCOL Syntax support for VS Code",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "preview": true,
     "publisher": "EN-AutomationSteveW",
     "homepage": "https://github.com/stevepwang/accol-syntax",

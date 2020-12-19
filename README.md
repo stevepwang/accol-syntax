@@ -14,6 +14,10 @@ Alternatively, clone this repository into your VS Code extensions folder ([Where
 
 ## Release Notes
 
-### 0.0.x
+### 0.1.0
+
+Reached basic functionality
+
+### 0.0.1
 
 Preview release
