@@ -50,6 +50,7 @@
                 "patterns": [
                   { "include": "#line_numbers" },
                   { "include": "#grammar" },
+                  { "include": "#comments" },
                   { "include": "#keywords" },
                   { "include": "#operators" },
                   { "include": "#variables" },
@@ -200,7 +201,7 @@
     "operators": {
       "patterns": [{
         "name": "keyword.operator.accol",
-        "match": "\\+|-|\\*|/|(<|>|!|=)=?|&|\\||\\^|~|:\\w{1,3}:?"
+        "match": "\\+|-|\\*|/|(<|>|!|=)=?|&|\\||\\^|~|:\\w{1,3}[^\\s]"
       }]
     },
     "constants": {
